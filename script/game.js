@@ -6,7 +6,7 @@ let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board');
 
-function main(currentTime) {
+export function main(currentTime) {
     if (outsideGrid(getSnakeHead()) || snakeIntersection()) {
         gameOver = true;
     }
@@ -28,8 +28,6 @@ function main(currentTime) {
     update();
     draw();
 }
-
-window.requestAnimationFrame(main);
 
 function update() {
     updateSnake();
